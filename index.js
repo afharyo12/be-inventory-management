@@ -1,6 +1,6 @@
 import express, { response } from "express";
 import cors from "cors";
-import NoteRoute from "./routes/NoteRoute.js";
+import router from "./routes/Route.js";
 import bodyParser from "body-parser"
 import path from 'path';
 import {fileURLToPath} from 'url';
@@ -12,7 +12,7 @@ const __dirname = dirname(__filename);
 
 app.use(cors());
 app.use(express.json());
-app.use(NoteRoute);
+app.use(router);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
