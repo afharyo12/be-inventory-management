@@ -2,6 +2,12 @@ global:
   scrape_interval: 5s
 
 scrape_configs:
+  # Your existing backend job
   - job_name: 'nodejs-app'
     static_configs:
       - targets: ['backend:5000']
+
+  # --- ADD THIS NEW JOB ---
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: ['node-exporter:9100']
